@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: 'poppins', sans-serif;
+  box-sizing: border-box;
+  align-items: center;
+  background: linear-gradient(135deg,#00203FFF,#ADEFD1FF);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+ul {
+  font-size: large;
+  margin: 0;
+  padding: 0;
+}
+li {
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: 1px solid rgb(173, 239, 209);
+}
+ul li {
+  cursor: pointer;
+  position: relative;
+  list-style-type: none;
+  font-size: 18px;
+  transition: 0.2s;
+  padding: 3px 3px 0px 5px;
+}
+
+
+ul li:hover {
+  background: linear-gradient(135deg,rgba(0, 31, 63, 0.579),rgb(173, 239, 209));
+  color: white;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  padding: 1px;
+}
+
+.ToDo-app{
+  width: 100%;
+  max-width: 540px;
+  min-width: 320px;
+  background: #00203FFF;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.148) 3px 3px 3px 3px;
+}
+h2 {
+  text-align: center;
+  background-color: #ADEFD1FF;
+  color: #00203FFF;
+  padding: 3px 3px 0px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.327) 1px 1px 1px 1px;
+}
+
+li.checked {
+  background: linear-gradient(135deg,rgb(0, 50, 100),#ADEFD1FF);
+  color: white;
+  border: 0;
+  margin: 11px 0px 11px 0px;
+}
+.close {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color:#00203FFF;
+}
+
+button {
+  padding: 10px;
+  width: 21%;
+  background: #ADEFD1FF;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-color: #00203FFF;
+  border-radius: 10px;
+  float:right;
+}
+
+button:hover {
+  cursor: pointer;
+  background: rgba(0, 31, 63, 0.794);
+  color: white;
+}
+
+button:disabled {
+  background-color: #00203FFF;
+  cursor: not-allowed;
+  color: rgb(0, 65, 130);
+}
+
+input {
+  margin: 0;
+  border:none;
+  border-radius: 10px;
+  width: 72%;
+  position: static;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  background-color: #00203FFF;
+  color: white;
+}
+
+input:focus {
+  border: 1px;
+  background-color: rgb(0, 40, 81);
+  color: white;
+}
+
+input::placeholder {
+  color:rgba(173, 239, 209, 0.514);
+}
+
+img {
+  width: 10%;
+  display: block;
+  margin: 0 auto;
+}
