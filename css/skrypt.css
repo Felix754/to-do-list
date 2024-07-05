@@ -1,24 +1,98 @@
+html,
 body {
   margin: 0;
+  height: 100%;
   font-family: 'poppins', sans-serif;
-  box-sizing: border-box;
-  align-items: center;
-  background: linear-gradient(135deg,#00203FFF,#ADEFD1FF);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.theme-light {
+  --color-primary: #ADEFD1FF;
+  --color-secondary: #00203FFF;
+  --contrast-font-color: #ffffff;
+  --accent-color: rgb(117, 254, 192);
+  --second-accent-color: rgba(0, 31, 63, 0.476);
+  --font-color: #000000;
+  --button-color: #00203FFF;
+  --input-color: rgb(164, 255, 214);
+  --gradient-color1: #00203FFF;
+  --gradient-color2: rgb(117, 254, 192);
+}
+
+.theme-dark {
+  --color-primary: #00203FFF;
+  --color-secondary: #ADEFD1FF;
+  --contrast-font-color: #000000;
+  --accent-color: rgb(0, 40, 81);
+  --second-accent-color: rgba(173, 239, 209, 0.639);
+  --font-color: #ffffff;
+  --button-color: #ADEFD1FF;
+  --input-color: rgb(0, 44, 89);
+  --gradient-color1: #ADEFD1FF;
+  --gradient-color2: #00203FFF;
+  ;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.148) 3px 3px 3px 3px;
+
+  width: 95%;
+  height: 50px;
+  margin: 10px auto 10px;
+
+  top: 0;
+  position: sticky;
+  padding: 5px;
+  z-index: 1;
+}
+
+footer {
+  align-self: center;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  width: 100%;
+  margin: 0;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.148) 5px 1px 5px 5px;
+  height: 100px;
+}
+
 ul {
   font-size: large;
   margin: 0;
   padding: 0;
 }
+
 li {
-  color: rgb(255, 255, 255);
+  color: var(--font-color);
   margin-bottom: 10px;
   border-radius: 10px;
   padding-left: 10px;
-  border: 1px solid rgb(173, 239, 209);
+  border: 1px solid var(--color-secondary);
+
+  animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+  /* simple tool for animations: 
+  https://cubic-bezier.com/#.08,.5,1,1.06 */
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top center;
 }
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 ul li {
   cursor: pointer;
   position: relative;
@@ -30,107 +104,188 @@ ul li {
 
 
 ul li:hover {
-  background: linear-gradient(135deg,rgba(0, 31, 63, 0.579),rgb(173, 239, 209));
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--font-color);
 }
 
-.container{
-  width: 100%;
+.container {
+  display: flex;
+  padding: 0;
+  margin: 10px auto 10px;
+  align-self: center;
+  width: 95%;
   min-height: 100vh;
-  padding: 1px;
 }
 
-.ToDo-app{
+.Project-app {
   width: 100%;
-  max-width: 540px;
-  min-width: 320px;
-  background: #00203FFF;
-  margin: 100px auto 20px;
-  padding: 40px 30px 70px;
+  max-width: 450px;
+  background: var(--color-primary);
+
+  margin: 50px 20px 0;
+  padding: 30px 30px 70px;
+  align-self: first baseline;
+
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.148) 3px 3px 3px 3px;
+
+  animation: show 300ms 120ms cubic-bezier(.71, .37, .45, .57) forwards;
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top center;
+}
+
+h1 {
+  color: var(--font-color);
+}
+
+.ToDo-app {
+  width: 100%;
+  max-width: 720px;
+
+  background: var(--color-primary);
+
+  margin: 50px auto 20px;
+  padding: 30px 30px 70px;
+
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.148) 3px 3px 3px 3px;
 }
+
 h2 {
   text-align: center;
-  background-color: #ADEFD1FF;
-  color: #00203FFF;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
   padding: 3px 3px 0px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.327) 1px 1px 1px 1px;
 }
 
 li.checked {
-  background: linear-gradient(135deg,rgb(0, 50, 100),#ADEFD1FF);
-  color: white;
+  background: linear-gradient(135deg, var(--gradient-color2), var(--gradient-color1));
+  text-decoration: line-through;
+  color: var(--font-color);
   border: 0;
   margin: 11px 0px 11px 0px;
 }
+
 .close {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0;
-    margin-right: 5px;
-    border-radius: 10px;
-    padding: 0 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  margin-right: 5px;
+  border-radius: 10px;
+  padding: 0 5px;
+  color: rgba(255, 0, 0, 0.654);
 }
 
 .close:hover {
   background-color: #f44336;
-  color:#00203FFF;
+  color: #00203FFF;
 }
 
 button {
   padding: 10px;
   width: 21%;
-  background: #ADEFD1FF;
-  float: left;
+  background-color: var(--color-secondary);
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
-  border-color: #00203FFF;
+  border-color: var(--color-primary);
+  color: var(--contrast-font-color);
   border-radius: 10px;
-  float:right;
+  float: right;
 }
 
 button:hover {
   cursor: pointer;
-  background: rgba(0, 31, 63, 0.794);
-  color: white;
+  background: var(--color-primary);
+  color: var(--font-color);
 }
 
 button:disabled {
-  background-color: #00203FFF;
+  background-color: var(--color-primary);
   cursor: not-allowed;
-  color: rgb(0, 65, 130);
+  color: rgba(0, 65, 130, 0.477);
 }
 
 input {
   margin: 0;
-  border:none;
+  border: none;
   border-radius: 10px;
   width: 72%;
   position: static;
   padding: 10px;
   float: left;
   font-size: 16px;
-  background-color: #00203FFF;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--font-color);
 }
 
 input:focus {
   border: 1px;
-  background-color: rgb(0, 40, 81);
-  color: white;
+  background-color: var(--input-color);
+  color: var(--font-color);
 }
 
 input::placeholder {
-  color:rgba(173, 239, 209, 0.514);
+  color: var(--second-accent-color);
 }
 
-img {
-  width: 10%;
-  display: block;
-  margin: 0 auto;
+img.icon-logo {
+  height: 100%;
+  width: auto;
+  margin-right: 5px;
+  position: 1;
+}
+
+img.icon-menu {
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+  margin-right: auto;
+  position: 2;
+
+}
+
+img.icon-theme {
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+  position: 3;
+}
+
+img.icon-menu path {
+  fill: red;
+}
+
+
+.hiden {
+  display: none;
+}
+
+
+
+
+@media screen and (max-width:1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ToDo-app {
+    margin: 50px 0px 0;
+
+    width: 90%;
+  }
+
+  .Project-app {
+    margin: 15px 0px 0;
+    width: 90%;
+    align-self: auto;
+    max-width: 720px;
+  }
 }
