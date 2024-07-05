@@ -5,24 +5,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="css/skrypt.css" />
-    <link rel="icon" href="images/icon.svg" type="images/svg+xml"
+    <link rel="stylesheet" href="css/skrypt.css"/>
+    <link rel="icon" href="images/icon.svg" type="image/svg+xml" />
+    <link rel="menu" href="images/menu.svg" type="image/svg+xml" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="ToDo-app">
-            <div>
-                <img src="images/icon.svg" alt="to-do logo">
-                <h2>TO-DO LIST</h2>
-            </div>
-            <div class="row">
-            </div>
-            <ul id="list-container"></ul>
-            <input type="text" id="input-box" placeholder="Add your task..." />
-            <button id="submit-button" class="disabled" onclick="AddTask()" disabled>Add</button>
-        </div>
+    <nav>
+        <img class="icon-logo" src="images/icon.svg" alt="icon-logo">
+        <img class="icon-menu" src="images/menu-dark.svg" alt="icon-menu" id="icon-menu">
+        <img class="icon-theme" src="images/darkmodOFF.svg" alt="icon-theme" id="icon-theme">
+    </nav>
+    <main class="container">
+    <div class="Project-app hiden" id="project-box">
+        <h1>Projects</h1>
+        <input type="text" id="project-input-box"  placeholder="Create your project..."/>
+        
     </div>
+    <section class="ToDo-app" id="to-do-box">
+        <div>
+            <h2>TO-DO LIST</h2>
+            <ul id="projects-list-container"></ul>
+        </div>
+        <div class="row">
+        </div>
+        <ul id="to-do-list-container"></ul>
+        <input type="text" id="to-do-input-box" placeholder="Add your task..." />
+        <button id="to-do-submit-button" class="disabled" onclick="AddTask()" disabled>Add</button>
+    </section>
+    </main>
+    <footer></footer>
     <script src="js/func.js"></script>
 </body>
 
