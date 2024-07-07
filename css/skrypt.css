@@ -110,6 +110,7 @@ ul li {
   transition: 0.2s;
   padding: 3px 3px 0px 5px;
 }
+
 ul li:hover {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: var(--font-color);
@@ -267,21 +268,22 @@ img.icon-menu {
 
 }
 
-a
-{
+a {
   margin-right: 20px;
   color: var(--contrast-font-color);
   position: 3;
   text-decoration: none;
 }
-a:hover
-{
+
+a:hover {
   color: var(--gradient-color2);
 }
+
 a:active {
   color: blue;
   text-decoration: underline;
 }
+
 b {
   margin-right: auto;
 }
@@ -310,26 +312,6 @@ h4 {
   width: auto;
   height: auto;
 }
-@media screen and (max-width:1000px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ToDo-app {
-    margin: 50px 0px 0;
-
-    width: 90%;
-  }
-
-  .Project-app {
-    margin: 15px 0px 0;
-    width: 90%;
-    align-self: auto;
-    max-width: 720px;
-  }
-}
 
 p {
   color: var(--font-color);
@@ -342,6 +324,7 @@ p {
   padding: 0;
 
 }
+
 h3 {
   color: var(--font-color);
 }
@@ -363,12 +346,59 @@ h3 {
 
 .text-li:hover {
   background: none;
-  cursor:auto;
+  cursor: auto;
 }
+
 .text-link {
   color: var(--font-color);
   text-decoration: underline;
 }
+
 .text-link:hover {
   color: var(--gradient-color1);
+}
+
+@media screen and (max-width:1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ToDo-app {
+    margin: 50px 0px 0;
+
+    width: 90%;
+  }
+
+  .Project-app {
+    margin: 15px 0px 0;
+    width: 90%;
+    align-self: auto;
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .link-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    width: 60%;
+    position: static;
+    padding: 10px;
+    float: left;
+  }
+  button {
+    width: 25%;
+    float: right;
+  }
+
 }
