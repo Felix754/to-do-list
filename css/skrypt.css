@@ -18,7 +18,7 @@ body {
   --button-color: #00203FFF;
   --input-color: rgb(164, 255, 214);
   --gradient-color1: #00203FFF;
-  --gradient-color2: rgb(117, 254, 192);
+  --gradient-color2: #ADEFD1FF;
 }
 
 .theme-dark {
@@ -49,9 +49,14 @@ nav {
   height: 50px;
   margin: 10px auto 10px;
 
+
+  padding: 5px;
+  z-index: 1;
+}
+
+header {
   top: 0;
   position: sticky;
-  padding: 5px;
   z-index: 1;
 }
 
@@ -63,6 +68,9 @@ footer {
   margin-top: 20px;
   box-shadow: rgba(0, 0, 0, 0.148) 5px 1px 5px 5px;
   height: 100px;
+  color: var(--font-color);
+  padding-top: 30px;
+  text-align: center;
 }
 
 ul {
@@ -84,6 +92,7 @@ li {
   opacity: 0;
   transform: rotateX(-90deg);
   transform-origin: top center;
+  overflow: hidden;
 }
 
 @keyframes show {
@@ -101,8 +110,6 @@ ul li {
   transition: 0.2s;
   padding: 3px 3px 0px 5px;
 }
-
-
 ul li:hover {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: var(--font-color);
@@ -110,6 +117,7 @@ ul li:hover {
 
 .container {
   display: flex;
+
   padding: 0;
   margin: 10px auto 10px;
   align-self: center;
@@ -144,12 +152,16 @@ h1 {
   max-width: 720px;
 
   background: var(--color-primary);
-
   margin: 50px auto 20px;
   padding: 30px 30px 70px;
 
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.148) 3px 3px 3px 3px;
+
+  animation: show 300ms 120ms cubic-bezier(.71, .37, .45, .57) forwards;
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top center;
 }
 
 h2 {
@@ -167,6 +179,11 @@ li.checked {
   color: var(--font-color);
   border: 0;
   margin: 11px 0px 11px 0px;
+}
+
+li.selected {
+  background: linear-gradient(135deg, var(--gradient-color1), var(--gradient-color2));
+  color: var(--contrast-font-color);
 }
 
 .close {
@@ -245,30 +262,54 @@ img.icon-menu {
   height: 100%;
   width: auto;
   cursor: pointer;
-  margin-right: auto;
+  margin-right: 10px;
   position: 2;
 
+}
+
+a
+{
+  margin-right: 20px;
+  color: var(--contrast-font-color);
+  position: 3;
+  text-decoration: none;
+}
+a:hover
+{
+  color: var(--gradient-color2);
+}
+a:active {
+  color: blue;
+  text-decoration: underline;
+}
+b {
+  margin-right: auto;
 }
 
 img.icon-theme {
   height: 100%;
   width: auto;
   cursor: pointer;
-  position: 3;
+  position: 4;
 }
-
-img.icon-menu path {
-  fill: red;
-}
-
 
 .hiden {
   display: none;
 }
 
+.hiddenp {
+  display: none;
+}
 
+h4 {
+  text-align: center;
+  color: var(--font-color);
+}
 
-
+.link-container {
+  width: auto;
+  height: auto;
+}
 @media screen and (max-width:1000px) {
   .container {
     display: flex;
@@ -288,4 +329,46 @@ img.icon-menu path {
     align-self: auto;
     max-width: 720px;
   }
+}
+
+p {
+  color: var(--font-color);
+  width: 100%;
+  display: block;
+  text-align: justify;
+  text-indent: 1.5em;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+
+}
+h3 {
+  color: var(--font-color);
+}
+
+.text-ul {
+  padding-left: 0;
+}
+
+.text-li {
+  color: var(--font-color);
+  border-radius: 0;
+  padding-left: 10px;
+  border: 0;
+  display: block;
+  text-align: justify;
+  text-indent: 1.5em;
+  line-height: 1.2;
+}
+
+.text-li:hover {
+  background: none;
+  cursor:auto;
+}
+.text-link {
+  color: var(--font-color);
+  text-decoration: underline;
+}
+.text-link:hover {
+  color: var(--gradient-color1);
 }
