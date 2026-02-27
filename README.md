@@ -4,6 +4,8 @@
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?logo=github)](https://felix754.github.io/to-do-list/)
+
 A minimal **browser-based To-Do List** built with pure HTML, CSS, and JavaScript. The goal of the project is to try base frontend technologies.
 
 ## Features
